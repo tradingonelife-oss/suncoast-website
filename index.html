@@ -4,787 +4,1100 @@
   <meta charset="UTF-8" />
   <title>SunCoast Private Lending, LLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="SunCoast Private Lending, LLC provides fast, asset-backed real estate funding for investors in Central Florida."
-  />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <meta name="description" content="SunCoast Private Lending provides fast, asset-based private loans for real estate investors – fix & flip, rental, bridge, and construction loans. Close in days, not weeks." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
   <style>
     :root {
       --navy: #012a4a;
-      --navy-dark: #001524;
-      --teal: #2a9d8f;
-      --gold: #e9c46a;
-      --bg: #f6f7fb;
+      --gold: #d4af37;
+      --light-bg: #f5f7fa;
       --text: #1f2933;
-      --white: #ffffff;
     }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
     body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", sans-serif;
-      background: var(--bg);
+      font-family: "Poppins", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
       color: var(--text);
-      line-height: 1.6;
+      background: #ffffff;
+      line-height: 1.5;
     }
+
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
-    img {
-      max-width: 100%;
-      display: block;
+
+    .page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
+
+    .section {
+      padding: 60px 20px;
+    }
+
     .container {
-      max-width: 1140px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 0 1.25rem;
     }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+
+    /* HERO */
+    .hero {
+      background: radial-gradient(circle at top left, #335d8c 0%, #012a4a 55%);
+      color: #ffffff;
+      padding-top: 40px;
+      padding-bottom: 80px;
     }
-    .nav {
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 12px;
+      opacity: 0.85;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      height: 70px;
+      gap: 8px;
+      margin-bottom: 18px;
     }
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .logo-box {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--teal), var(--gold));
+
+    .logo-sun {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 2px solid var(--gold);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--white);
-      font-weight: 700;
-      font-size: 20px;
-    }
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-    }
-    .logo-text span:first-child {
-      font-weight: 700;
-      font-size: 0.98rem;
-      color: var(--navy);
-    }
-    .logo-text span:last-child {
-      font-size: 0.75rem;
-      color: #6b7280;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-      font-size: 0.92rem;
-    }
-    .nav-links a {
       position: relative;
-      padding-bottom: 2px;
-      color: #4b5563;
-      font-weight: 500;
     }
-    .nav-links a::after {
+
+    .logo-sun::before {
+      content: "";
+      width: 14px;
+      height: 7px;
+      border-radius: 14px 14px 0 0;
+      background: var(--gold);
+      position: absolute;
+      bottom: 4px;
+    }
+
+    .logo-sun::after {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 2px;
-      width: 0;
-      background: linear-gradient(90deg, var(--teal), var(--gold));
-      transition: width 0.2s;
-    }
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-    .nav-cta {
-      padding: 0.5rem 1rem;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, var(--teal), var(--gold));
-      color: var(--navy-dark);
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-    }
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
-    }
-    .nav-toggle span {
       width: 22px;
-      height: 2px;
-      background: var(--navy);
+      height: 22px;
       border-radius: 999px;
+      border: 1px solid rgba(212, 175, 55, 0.6);
+      opacity: 0.7;
     }
-    @media (max-width: 768px) {
-      .nav-links {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 70px;
-        background: var(--white);
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem 1.25rem;
-        transform: translateY(-150%);
-        transition: transform 0.25s ease-out;
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
-      }
-      .nav-links.open {
-        transform: translateY(0);
-      }
-      .nav-toggle {
-        display: flex;
-      }
-    }
-    .hero {
-      background: radial-gradient(
-          circle at top left,
-          rgba(233, 196, 106, 0.18),
-          transparent 55%
-        ),
-        radial-gradient(
-          circle at bottom right,
-          rgba(42, 157, 143, 0.2),
-          transparent 60%
-        ),
-        var(--bg);
-      padding: 3rem 0 2.75rem;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.25rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(42, 157, 143, 0.08);
-      color: var(--teal);
-      font-size: 0.78rem;
-      font-weight: 600;
-      margin-bottom: 0.8rem;
-    }
-    .badge-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--teal);
-    }
+
     .hero h1 {
-      font-size: clamp(2.1rem, 3vw, 2.7rem);
-      color: var(--navy-dark);
-      margin-bottom: 0.7rem;
+      font-size: clamp(32px, 4vw, 42px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      font-weight: 700;
     }
-    .hero p {
-      font-size: 0.96rem;
-      color: #4b5563;
-      margin-bottom: 1.4rem;
-      max-width: 580px;
+
+    .hero-sub {
+      font-size: 15px;
+      max-width: 520px;
+      opacity: 0.9;
+      margin-bottom: 22px;
     }
+
+    .hero-tags {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 28px;
+    }
+
+    .hero-tags span {
+      margin-right: 10px;
+      position: relative;
+      padding-right: 14px;
+    }
+
+    .hero-tags span::after {
+      content: "•";
+      position: absolute;
+      right: 0;
+      opacity: 0.7;
+    }
+
+    .hero-tags span:last-child::after {
+      content: "";
+    }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
     }
+
     .btn-primary {
-      padding: 0.75rem 1.5rem;
+      background: var(--gold);
+      color: #0b1720;
+      padding: 12px 22px;
       border-radius: 999px;
-      border: none;
-      background: linear-gradient(135deg, var(--teal), var(--gold));
-      color: var(--navy-dark);
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 14px;
+      border: none;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
+
+    .btn-primary span.arrow {
+      font-size: 18px;
+      line-height: 1;
+      transform: translateY(1px);
+    }
+
     .btn-secondary {
-      padding: 0.75rem 1.4rem;
       border-radius: 999px;
-      border: 1px solid rgba(15, 23, 42, 0.15);
-      background: var(--white);
-      color: var(--navy);
-      font-size: 0.9rem;
+      padding: 10px 18px;
+      font-size: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: transparent;
+      color: #e5edf6;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-      font-size: 0.82rem;
-      color: #6b7280;
+
+    .hero-note {
+      font-size: 12px;
+      opacity: 0.85;
     }
-    .hero-meta strong {
-      color: var(--navy);
+
+    .hero-note strong {
+      color: var(--gold);
     }
+
     .hero-card {
-      background: var(--white);
-      border-radius: 18px;
-      padding: 1.4rem 1.5rem;
-      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.14);
-      border: 1px solid rgba(15, 23, 42, 0.06);
-      font-size: 0.87rem;
+      background: rgba(6, 20, 40, 0.9);
+      border-radius: 16px;
+      padding: 18px 18px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
     }
-    .hero-card h2 {
-      font-size: 1.05rem;
-      margin-bottom: 0.7rem;
-      color: var(--navy);
-    }
-    .hero-grid-mini {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.7rem;
-      margin-bottom: 1rem;
-    }
-    .hero-grid-mini div {
-      background: #f3f4f7;
-      border-radius: 12px;
-      padding: 0.5rem 0.7rem;
-    }
-    .hero-grid-mini div strong {
-      display: block;
-      color: var(--navy);
-      font-size: 0.8rem;
-      margin-bottom: 0.1rem;
-    }
-    .hero-tagline {
-      font-size: 0.8rem;
-      color: #6b7280;
-    }
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-    section {
-      padding: 2.75rem 0;
-    }
-    .section-head {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .section-eyebrow {
-      font-size: 0.8rem;
+
+    .hero-card-title {
+      font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: var(--teal);
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 10px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .metric {
+      padding: 10px 10px 8px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-size: 16px;
       font-weight: 600;
-      margin-bottom: 0.2rem;
+      color: var(--gold);
     }
+
+    .metric-sub {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-card-foot {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.7);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 10px;
+      margin-top: 8px;
+    }
+
+    /* SECTION HEADINGS */
     .section-title {
-      font-size: 1.6rem;
-      color: var(--navy-dark);
-      margin-bottom: 0.4rem;
-    }
-    .section-subtitle {
-      font-size: 0.94rem;
-      color: #6b7280;
-    }
-    #services {
-      background: var(--white);
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .service-card {
-      background: #f9fafb;
-      border-radius: 14px;
-      padding: 1.3rem 1.2rem;
-      border: 1px solid rgba(15, 23, 42, 0.05);
-      font-size: 0.88rem;
-      color: #4b5563;
-    }
-    .service-card h3 {
-      font-size: 1rem;
+      font-size: 24px;
       color: var(--navy);
-      margin-bottom: 0.4rem;
+      margin-bottom: 10px;
+      font-weight: 600;
     }
-    .pill {
-      display: inline-flex;
-      padding: 0.18rem 0.7rem;
+
+    .section-sub {
+      font-size: 14px;
+      color: #4b5563;
+      max-width: 640px;
+      margin-bottom: 26px;
+    }
+
+    /* BENEFITS */
+    .benefits {
+      background: var(--light-bg);
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .benefit-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 18px 18px 20px;
+      border: 1px solid #e0e7ff;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    }
+
+    .benefit-icon {
+      width: 26px;
+      height: 26px;
       border-radius: 999px;
-      font-size: 0.75rem;
-      background: rgba(42, 157, 143, 0.08);
-      color: var(--teal);
-      margin-bottom: 0.4rem;
-      font-weight: 500;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      margin-bottom: 10px;
     }
-    .term-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.3rem;
+
+    .benefit-title {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: var(--navy);
     }
-    .term-card {
-      background: #f3f4f7;
-      border-radius: 12px;
-      padding: 0.9rem 0.9rem;
-      font-size: 0.84rem;
+
+    .benefit-text {
+      font-size: 13px;
       color: #4b5563;
     }
-    .term-card strong {
-      display: block;
-      color: var(--navy);
-      margin-bottom: 0.2rem;
-      font-size: 0.82rem;
-    }
-    @media (max-width: 900px) {
-      .services-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .term-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-    @media (max-width: 640px) {
-      .services-grid,
-      .term-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-    #about {
-      background: var(--bg);
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: start;
-    }
-    .about-card {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 1.4rem 1.4rem;
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      font-size: 0.9rem;
-      color: #4b5563;
-    }
-    .about-card h3 {
-      font-size: 1.02rem;
-      color: var(--navy);
-      margin-bottom: 0.4rem;
-    }
-    .about-list {
-      margin-top: 0.4rem;
-      padding-left: 1.1rem;
-    }
-    .about-list li {
-      margin-bottom: 0.25rem;
-    }
-    @media (max-width: 900px) {
-      .about-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-    #contact {
-      background: var(--white);
-    }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.9fr);
-      gap: 2rem;
-      align-items: flex-start;
-    }
-    .contact-card {
-      background: #f9fafb;
-      border-radius: 16px;
-      padding: 1.4rem 1.4rem;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      font-size: 0.9rem;
-      color: #4b5563;
-    }
-    .contact-card h3 {
-      font-size: 1.02rem;
-      color: var(--navy);
-      margin-bottom: 0.4rem;
-    }
-    .form-grid {
+
+    /* PROGRAMS */
+    .program-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.8rem;
-      margin-bottom: 0.8rem;
+      gap: 20px;
     }
-    .form-field {
+
+    .program-card {
+      border-radius: 18px;
+      padding: 20px 20px 18px;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .program-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+
+    .program-title {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .program-text {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+
+    .program-list {
+      list-style: none;
+      font-size: 12px;
+      color: #4b5563;
+      margin-bottom: 10px;
+    }
+
+    .program-list li {
+      margin-bottom: 4px;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .program-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .program-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      background: rgba(212, 175, 55, 0.08);
+      color: #7c5b12;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    /* PROCESS */
+    .process {
+      background: var(--light-bg);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .process-step {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 18px 18px 16px;
+      border: 1px solid #e0e7ff;
+    }
+
+    .process-number {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      border: 1px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .process-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+
+    .process-text {
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    /* ELIGIBILITY */
+    .eligibility-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .eligibility-card {
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      padding: 18px 20px 18px;
+      background: #ffffff;
+    }
+
+    .eligibility-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .eligibility-list {
+      list-style: none;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .eligibility-list li {
+      margin-bottom: 6px;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .eligibility-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    /* FORM SECTION */
+    .apply {
+      background: #ffffff;
+    }
+
+    .apply-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 26px;
+      align-items: flex-start;
+    }
+
+    .apply-form {
+      border-radius: 20px;
+      border: 1px solid #e5e7eb;
+      padding: 22px 20px 20px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+      background: #ffffff;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 4px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      padding: 9px 10px;
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.3);
+    }
+
+    .field small {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .form-footer {
+      margin-top: 6px;
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
-      font-size: 0.8rem;
+      gap: 6px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .apply-sidebar {
+      font-size: 13px;
       color: #4b5563;
     }
-    .form-field input,
-    .form-field textarea {
-      padding: 0.55rem 0.65rem;
-      border-radius: 8px;
-      border: 1px solid rgba(148, 163, 184, 0.9);
-      font-family: inherit;
-      font-size: 0.85rem;
-    }
-    .form-field textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-    .form-full {
-      grid-column: 1 / -1;
-    }
-    .contact-details {
-      background: #f3f4f7;
-      border-radius: 14px;
-      padding: 1.2rem 1.2rem;
-      font-size: 0.9rem;
-      color: #4b5563;
-    }
-    .contact-details h4 {
-      font-size: 0.96rem;
+
+    .apply-sidebar h3 {
+      font-size: 15px;
+      font-weight: 600;
       color: var(--navy);
-      margin-bottom: 0.4rem;
+      margin-bottom: 8px;
     }
-    @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .form-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+
+    .apply-sidebar ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 10px;
     }
-    footer {
-      background: var(--navy-dark);
-      color: rgba(249, 250, 251, 0.86);
-      padding: 1.4rem 0;
-      margin-top: 1.5rem;
-      font-size: 0.8rem;
+
+    .apply-sidebar li {
+      margin-bottom: 6px;
+      padding-left: 14px;
+      position: relative;
     }
+
+    .apply-sidebar li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    /* FAQ */
+    .faq {
+      background: var(--light-bg);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 16px 18px 14px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .faq-q {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+
+    .faq-a {
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #020b16;
+      color: rgba(249, 250, 251, 0.85);
+      padding: 28px 20px 20px;
+      font-size: 12px;
+    }
+
     .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       justify-content: space-between;
-      gap: 0.8rem;
+      gap: 14px;
     }
+
     .footer-links {
       display: flex;
-      gap: 0.9rem;
+      gap: 14px;
       flex-wrap: wrap;
+      font-size: 11px;
+      opacity: 0.8;
     }
-    .footer-links a {
-      color: rgba(249, 250, 251, 0.86);
+
+    .footer small {
+      display: block;
+      margin-top: 6px;
+      max-width: 600px;
+      color: rgba(209, 213, 219, 0.8);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .apply-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        margin-top: 18px;
+      }
+
+      .benefit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .program-grid,
+      .process-grid,
+      .eligibility-grid,
+      .faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 40px 18px;
+      }
+
+      .hero {
+        padding: 32px 18px 50px;
+      }
+
+      .hero-inner {
+        gap: 22px;
+      }
+
+      .benefit-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
   </style>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <div class="nav">
-        <div class="logo-wrap">
-          <div class="logo-box">SC</div>
-          <div class="logo-text">
-            <span>SunCoast Private Lending</span>
-            <span>Central Florida Real Estate Funding</span>
-          </div>
-        </div>
-        <nav>
-          <div class="nav-toggle" id="navToggle">
-            <span></span><span></span><span></span>
-          </div>
-          <div class="nav-links" id="navLinks">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <button
-              class="nav-cta"
-              onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});"
-            >
-              Apply for Funding
-            </button>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="container hero-grid">
+<body>
+  <div class="page">
+
+    <!-- HERO -->
+    <section class="hero section" id="top">
+      <div class="container hero-inner">
         <div>
-          <div class="badge">
-            <span class="badge-dot"></span>
-            Central Florida Private Real Estate Lending
+          <div class="logo-text">
+            <div class="logo-sun"></div>
+            SUNCOAST PRIVATE LENDING
           </div>
-          <h1>Fast, Reliable Funding for Real Estate Investors.</h1>
-          <p>
-            SunCoast Private Lending, LLC provides simple, asset-backed financing
-            for fix-and-flip, BRRRR, rehab, and investment projects across Central
-            Florida. Same-day deal review, local decisions, and clear, professional terms.
+          <h1>Fast Private Loans for Real Estate Investors</h1>
+          <p class="hero-sub">
+            Asset-based financing for fix & flip, rental, bridge, and construction projects.
+            Close in <strong>days, not weeks</strong>, with investor-focused terms and clear communication.
           </p>
+          <div class="hero-tags">
+            <span>Fix &amp; Flip</span>
+            <span>Rental / DSCR</span>
+            <span>Bridge</span>
+            <span>Construction</span>
+          </div>
+
           <div class="hero-actions">
-            <button
-              class="btn-primary"
-              onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});"
-            >
-              Apply for Funding
+            <button class="btn-primary" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+              Apply for Funding <span class="arrow">→</span>
             </button>
-            <button
-              class="btn-secondary"
-              onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'});"
-            >
-              View Loan Programs
+            <button class="btn-secondary" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+              Talk with a loan specialist
             </button>
           </div>
-          <div class="hero-meta">
-            <span><strong>Same-Day Deal Review</strong></span>
-            <span>Local Central Florida Expertise</span>
-            <span>Investor-Focused • Asset-Backed</span>
-          </div>
+
+          <p class="hero-note">
+            <strong>Investor-only financing.</strong> Non-owner-occupied properties for approved real estate investors and entities.
+          </p>
         </div>
 
         <aside class="hero-card">
-          <h2>Typical Loan Snapshot</h2>
-          <div class="hero-grid-mini">
-            <div>
-              <strong>Loan Amount</strong>
-              $25,000 – $100,000
+          <div class="hero-card-title">At-a-Glance</div>
+          <div class="hero-metrics">
+            <div class="metric">
+              <div class="metric-label">Typical Closing</div>
+              <div class="metric-value">7–14<span style="font-size:11px; margin-left:2px;">days*</span></div>
+              <div class="metric-sub">Deal &amp; docs dependent</div>
             </div>
-            <div>
-              <strong>Rate</strong>
-              12% interest-only
+            <div class="metric">
+              <div class="metric-label">Loan Amounts</div>
+              <div class="metric-value">$100k–$3M</div>
+              <div class="metric-sub">Based on deal &amp; experience</div>
             </div>
-            <div>
-              <strong>Points</strong>
-              2 points at closing
-            </div>
-            <div>
-              <strong>Term</strong>
-              6–12 months
+            <div class="metric">
+              <div class="metric-label">Property Types</div>
+              <div class="metric-value">Invest.</div>
+              <div class="metric-sub">SFR, 2–4 unit, small MF, mixed-use</div>
             </div>
           </div>
-          <p class="hero-tagline">
-            We analyze the <strong>deal</strong>, not just the borrower — giving investors
-            the speed and flexibility traditional banks can’t match.
-          </p>
+          <div class="hero-card-foot">
+            *Timeframes are estimates and depend on appraisal, title, and timely receipt of required documents. This is not a commitment to lend.
+          </div>
         </aside>
       </div>
     </section>
 
-    <section id="services">
+    <!-- HOW WE HELP -->
+    <section class="benefits section">
       <div class="container">
-        <div class="section-head">
-          <div class="section-eyebrow">Loan Programs</div>
-          <h2 class="section-title">Private Capital Built for Real Estate Investors</h2>
-          <p class="section-subtitle">
-            Flexible hard-money style funding for flips, rentals, BRRRR projects, and investor transactions.
-          </p>
-        </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <span class="pill">Fix &amp; Flip</span>
-            <h3>Acquisition &amp; Rehab Capital</h3>
-            <p>
-              Short-term funding for buying, renovating, and reselling residential properties.
-              Simple underwriting and fast closings.
-            </p>
-          </div>
-          <div class="service-card">
-            <span class="pill">Rental / BRRRR</span>
-            <h3>Rehab for Income Properties</h3>
-            <p>
-              Finance renovations for long-term rentals or BRRRR deals, then refinance with your preferred lender
-              after stabilization.
-            </p>
-          </div>
-          <div class="service-card">
-            <span class="pill">Gap &amp; Transactional</span>
-            <h3>Bridge &amp; Deal Support</h3>
-            <p>
-              Gap funding for cash-to-close or rehab, plus transactional funding for same-day A-to-B investor deals.
-            </p>
-          </div>
-        </div>
-        <h3 style="font-size:1.05rem;color:var(--navy);margin-bottom:.4rem;">Standard Loan Terms</h3>
-        <div class="term-grid">
-          <div class="term-card">
-            <strong>Loan Amounts</strong>
-            $25,000 – $100,000
-          </div>
-          <div class="term-card">
-            <strong>Rate</strong>
-            12% annual interest (interest-only)
-          </div>
-          <div class="term-card">
-            <strong>Points</strong>
-            2% of loan amount at closing
-          </div>
-          <div class="term-card">
-            <strong>Term Length</strong>
-            6–12 months
-          </div>
-          <div class="term-card">
-            <strong>Lien Position</strong>
-            First-position, real-estate backed
-          </div>
-          <div class="term-card">
-            <strong>Closing</strong>
-            Through Florida title company; clean title required
-          </div>
-        </div>
-      </div>
-    </section>
+        <h2 class="section-title">Built for Real Estate Investors, Not Banks</h2>
+        <p class="section-sub">
+          SunCoast Private Lending provides fast, asset-based capital so you can act quickly on opportunities and grow your portfolio without traditional lending headaches.
+        </p>
 
-    <section id="about">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-eyebrow">About SunCoast</div>
-          <h2 class="section-title">Local Lending, Investor-Focused</h2>
-          <p class="section-subtitle">
-            Built by real estate professionals who understand the pace, risks, and opportunities of Florida investing.
-          </p>
-        </div>
-        <div class="about-grid">
-          <div>
-            <div class="about-card">
-              <h3>Our Mission</h3>
-              <p>
-                To empower Central Florida real estate investors with fast, fair, and transparent private lending that
-                fuels growth, builds wealth, and strengthens the local investment community.
-              </p>
-            </div>
-            <div style="height:.9rem;"></div>
-            <div class="about-card">
-              <h3>Core Values</h3>
-              <ul class="about-list">
-                <li><strong>Integrity</strong> – Every deal, every conversation, every time.</li>
-                <li><strong>Speed</strong> – Same-day deal reviews whenever possible.</li>
-                <li><strong>Transparency</strong> – Clear terms, no hidden surprises.</li>
-                <li><strong>Reliability</strong> – When we commit to a deal, we fund it.</li>
-              </ul>
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">⚡</div>
+            <div class="benefit-title">Fast Decisions</div>
+            <div class="benefit-text">
+              Same-day review on most deals so you can write stronger offers and close with confidence.
             </div>
           </div>
-          <div>
-            <div class="about-card">
-              <h3>Who We Serve</h3>
-              <p>
-                We work exclusively with real estate investors — fix-and-flip operators, landlords, BRRRR investors,
-                wholesalers, and renovation-focused contractors.
-              </p>
-              <p class="about-list" style="margin-top:.6rem;">
-                <strong>Service Areas:</strong><br />
-                Orlando • Orange County • Seminole • Volusia • Brevard • Lake • Osceola • Flagler
-              </p>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">📈</div>
+            <div class="benefit-title">Investor-Friendly Terms</div>
+            <div class="benefit-text">
+              Asset-based underwriting that focuses on the collateral and your exit strategy, not just your credit score.
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">🏠</div>
+            <div class="benefit-title">Real Estate Expertise</div>
+            <div class="benefit-text">
+              We understand rehabs, ARV, and construction — we speak the same language as investors and builders.
+            </div>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">🤝</div>
+            <div class="benefit-title">Direct Access</div>
+            <div class="benefit-text">
+              Work directly with a decision-maker from first call through closing. No endless layers of approval.
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact">
+    <!-- PROGRAMS -->
+    <section class="section">
       <div class="container">
-        <div class="section-head">
-          <div class="section-eyebrow">Contact</div>
-          <h2 class="section-title">Submit a Deal for Review</h2>
-          <p class="section-subtitle">
-            Share the details of your next project and we’ll review as quickly as possible.
-          </p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Deal Submission Form</h3>
-            <p style="font-size:.86rem;margin-bottom:.7rem;">
-              This form can be wired to Netlify Forms or your CRM later – for now it’s a visual template.
+        <h2 class="section-title">Loan Programs Designed Around Your Strategy</h2>
+        <p class="section-sub">
+          From quick flips to long-term holds and ground-up projects, we match capital to your investment plan.
+        </p>
+
+        <div class="program-grid">
+          <article class="program-card">
+            <div class="program-label">Program</div>
+            <div class="program-title">Fix &amp; Flip Loans</div>
+            <p class="program-text">
+              Capital for purchase and rehab of investment properties you plan to renovate and resell.
             </p>
-            <form>
-              <div class="form-grid">
-                <div class="form-field">
-                  <label for="name">Name</label>
-                  <input id="name" type="text" placeholder="Your full name" />
-                </div>
-                <div class="form-field">
-                  <label for="email">Email</label>
-                  <input id="email" type="email" placeholder="you@example.com" />
-                </div>
-                <div class="form-field">
-                  <label for="phone">Phone</label>
-                  <input id="phone" type="tel" placeholder="(555) 555-5555" />
-                </div>
-                <div class="form-field">
-                  <label for="address">Property Address</label>
-                  <input id="address" type="text" placeholder="Street, City, State" />
-                </div>
-                <div class="form-field form-full">
-                  <label for="details">Deal Details (Purchase, Rehab, ARV, Timeline)</label>
-                  <textarea
-                    id="details"
-                    placeholder="Purchase price, rehab budget, ARV, experience, closing timeline..."
-                  ></textarea>
-                </div>
+            <ul class="program-list">
+              <li>Funding for purchase price and construction budget</li>
+              <li>Interest-only payments during the term</li>
+              <li>Terms typically 6–18 months</li>
+              <li>Based on realistic ARV and scope of work</li>
+            </ul>
+            <span class="program-badge">Ideal for value-add investors</span>
+          </article>
+
+          <article class="program-card">
+            <div class="program-label">Program</div>
+            <div class="program-title">Rental / DSCR Loans</div>
+            <p class="program-text">
+              For investors holding properties as long-term rentals or executing BRRRR strategies.
+            </p>
+            <ul class="program-list">
+              <li>1–4 unit and select small multifamily properties</li>
+              <li>Underwritten primarily on property cash flow</li>
+              <li>Long-term amortization options</li>
+              <li>Great for refinance after a successful flip or rehab</li>
+            </ul>
+            <span class="program-badge">Build long-term cash flow</span>
+          </article>
+
+          <article class="program-card">
+            <div class="program-label">Program</div>
+            <div class="program-title">Bridge Loans</div>
+            <p class="program-text">
+              Short-term capital for time-sensitive opportunities or transition periods.
+            </p>
+            <ul class="program-list">
+              <li>Fast closing for under-market acquisitions</li>
+              <li>Interest-only payments with clear exit strategy</li>
+              <li>Useful between purchase and stabilization/refinance</li>
+              <li>Flexible terms tailored to your situation</li>
+            </ul>
+            <span class="program-badge">Move quickly on deals</span>
+          </article>
+
+          <article class="program-card">
+            <div class="program-label">Program</div>
+            <div class="program-title">Construction &amp; Heavy Rehab</div>
+            <p class="program-text">
+              Funding for ground-up builds or major renovations with structured draw schedules.
+            </p>
+            <ul class="program-list">
+              <li>Draw-based disbursements tied to progress</li>
+              <li>Conservative leverage with strong support</li>
+              <li>Best for experienced investors and builders</li>
+              <li>Helps bring complex projects to the finish line</li>
+            </ul>
+            <span class="program-badge">Support for bigger projects</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process section">
+      <div class="container">
+        <h2 class="section-title">Simple, Straightforward Process</h2>
+        <p class="section-sub">
+          We keep things clear and efficient so you can focus on finding great deals and executing your plan.
+        </p>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-number">1</div>
+            <div class="process-title">Submit Your Deal</div>
+            <div class="process-text">
+              Share your property details, budget, and exit strategy using our quick online form or by speaking with a loan specialist.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-number">2</div>
+            <div class="process-title">Get Terms &amp; Approval</div>
+            <div class="process-text">
+              We review the deal, valuation, and your experience, then present clear terms and conditions — often within one business day.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-number">3</div>
+            <div class="process-title">Close &amp; Fund</div>
+            <div class="process-text">
+              Work with our team and closing partners to finalize docs, satisfy conditions, and get your deal funded.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ELIGIBILITY -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Are We a Good Fit for Your Deal?</h2>
+        <p class="section-sub">
+          We focus on investment properties where our capital helps create or unlock value for experienced and emerging investors.
+        </p>
+
+        <div class="eligibility-grid">
+          <div class="eligibility-card">
+            <div class="eligibility-title">We’re a Strong Fit If:</div>
+            <ul class="eligibility-list">
+              <li>The property is non-owner-occupied and for investment use.</li>
+              <li>You’re buying, rehabbing, building, or refinancing an investment property.</li>
+              <li>You have a clear exit strategy (sale or refinance) for each deal.</li>
+              <li>You value speed, communication, and reliability from your capital partner.</li>
+            </ul>
+          </div>
+
+          <div class="eligibility-card">
+            <div class="eligibility-title">We May Not Be a Fit If:</div>
+            <ul class="eligibility-list">
+              <li>You’re seeking a loan on an owner-occupied primary residence.</li>
+              <li>You require a traditional long-term consumer mortgage.</li>
+              <li>The project has no defined plan, timeline, or exit strategy.</li>
+              <li>You’re not prepared to provide basic documentation and property details.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLY FORM -->
+    <section class="apply section" id="apply">
+      <div class="container">
+        <h2 class="section-title">Apply for Fast, Investor-Focused Funding</h2>
+        <p class="section-sub">
+          Share a few key details about your deal and we’ll review it as quickly as possible. A loan specialist will contact you to discuss options.
+        </p>
+
+        <div class="apply-grid">
+          <form class="apply-form">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" type="text" placeholder="Your name" />
               </div>
-              <button type="button" class="btn-primary">Submit (connect to CRM later)</button>
-            </form>
-          </div>
-          <aside class="contact-details">
-            <h4>SunCoast Private Lending, LLC</h4>
-            <p>Orlando, Florida</p>
-            <p><strong>Email:</strong> info@suncoastprivatelending.com</p>
-            <p><strong>Hours:</strong> Mon–Fri 9:00 AM – 6:00 PM • Sat by appointment</p>
-            <p style="margin-top:.6rem;">
-              <strong>For fastest review, include:</strong><br />
-              Property address, purchase price, rehab budget, ARV, timeline to close, and your experience level.
+              <div class="field">
+                <label for="entity">Entity (LLC, Corp, etc.)</label>
+                <input id="entity" type="text" placeholder="Optional" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@example.com" />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" type="tel" placeholder="(###) ###-####" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="address">Property Address (if known)</label>
+              <input id="address" type="text" placeholder="Street, City, State" />
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="loan-type">Loan Type</label>
+                <select id="loan-type">
+                  <option value="">Select one</option>
+                  <option>Fix &amp; Flip</option>
+                  <option>Rental / DSCR</option>
+                  <option>Bridge</option>
+                  <option>Construction / Heavy Rehab</option>
+                  <option>Cash-Out Refi</option>
+                  <option>Not sure / need guidance</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="loan-amount">Approximate Loan Amount Needed</label>
+                <input id="loan-amount" type="text" placeholder="$" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="timeline">Closing Timeline</label>
+                <select id="timeline">
+                  <option value="">Select one</option>
+                  <option>ASAP (7 days or less)</option>
+                  <option>1–2 weeks</option>
+                  <option>3–4 weeks</option>
+                  <option>Just exploring options</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="experience">Experience Level</label>
+                <select id="experience">
+                  <option value="">Select one</option>
+                  <option>First deal</option>
+                  <option>1–3 deals</option>
+                  <option>4–10 deals</option>
+                  <option>10+ deals</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="notes">Brief Deal Summary</label>
+              <textarea id="notes" rows="3" placeholder="Purchase price, rehab budget, ARV, exit strategy, etc."></textarea>
+            </div>
+
+            <button type="button" class="btn-primary">
+              Submit Deal for Review <span class="arrow">→</span>
+            </button>
+
+            <div class="form-footer">
+              <span>* Form is for information only and does not constitute a loan application or commitment to lend.</span>
+              <span>We will follow up to gather full details and supporting documentation as needed.</span>
+            </div>
+          </form>
+
+          <aside class="apply-sidebar">
+            <h3>What Happens After You Submit?</h3>
+            <ul>
+              <li>A SunCoast loan specialist reviews your deal details.</li>
+              <li>We may request additional documents (photos, scope of work, purchase contract, etc.).</li>
+              <li>If the deal fits our programs, we present terms and next steps.</li>
+              <li>Once you accept terms and conditions are satisfied, we move toward closing and funding.</li>
+            </ul>
+
+            <h3>Questions Before You Apply?</h3>
+            <p>
+              You can also reach us directly at:
+              <br />Phone: <strong>407-367-9149</strong>
+              <br />Email: <strong>billy@suncoastprivatelending.com</strong>
             </p>
           </aside>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> SunCoast Private Lending, LLC. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+    <!-- FAQ -->
+    <section class="faq section">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-sub">
+          Have more questions? Here are a few of the most common things real estate investors ask us about private lending.
+        </p>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-q">How fast can you close?</div>
+            <div class="faq-a">
+              Every deal is different, but many investors close in 7–14 days depending on appraisal, title work, and how quickly we receive required documents.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Do you lend on owner-occupied homes?</div>
+            <div class="faq-a">
+              No. We focus on non-owner-occupied investment properties for business and investment purposes only.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Do you work with new investors?</div>
+            <div class="faq-a">
+              Yes, on a case-by-case basis. Experience helps, but we also look at the strength of the deal, your team, and your plan.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">What credit score do I need?</div>
+            <div class="faq-a">
+              We are primarily asset-based. Credit is considered, but our main focus is the collateral, leverage, and exit strategy of the deal.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">What areas do you lend in?</div>
+            <div class="faq-a">
+              We primarily focus on Florida-based real estate investments (adjust this to your exact markets). Contact us to discuss specific locations.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Is this a commitment to lend?</div>
+            <div class="faq-a">
+              No. All loans are subject to full underwriting, documentation, and final approval. Terms are deal-specific and may change based on updated information.
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </section>
 
-  <script>
-    const navToggle = document.getElementById("navToggle");
-    const navLinks = document.getElementById("navLinks");
-    if (navToggle && navLinks) {
-      navToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-      });
-    }
-    const yearEl = document.getElementById("year");
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-  </script>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>SunCoast Private Lending, LLC</strong><br />
+          Phone: 407-367-9149 · Email: billy@suncoastprivatelending.com<br />
+          Website: SuncoastPrivateLending.com
+          <small>
+            SunCoast Private Lending provides financing for non-owner-occupied investment properties only. All loans are subject to underwriting approval, satisfactory collateral, and market conditions. This content is for informational purposes and does not constitute a commitment to lend or an offer of credit.
+          </small>
+        </div>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <span>·</span>
+          <span>Privacy Policy</span>
+          <span>·</span>
+          <span>Terms &amp; Disclosures</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
 </body>
 </html>
