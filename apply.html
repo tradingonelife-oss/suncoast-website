@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>SunCoast Private Lending, LLC</title>
+  <title>Apply for Funding – SunCoast Private Lending</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="SunCoast Private Lending provides fast, asset-based private loans for real estate investors – fix & flip, rental, bridge, and construction loans. Close in days, not weeks." />
+  <meta name="description" content="Apply for fast, asset-based private loans for Florida real estate investments with SunCoast Private Lending." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -51,7 +51,6 @@
     }
     .hero h1 { font-size: clamp(32px,4vw,42px); line-height: 1.1; margin-bottom: 16px; font-weight: 700; }
     .hero-sub { font-size: 15px; max-width: 520px; opacity: 0.9; margin-bottom: 22px; }
-    .hero-tags { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; margin-bottom: 28px; }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 24px; }
     .btn-primary {
       background: var(--gold); color: #0b1720; padding: 12px 22px; border-radius: 999px;
@@ -67,16 +66,33 @@
     }
     .hero-note { font-size: 12px; opacity: 0.85; }
     .hero-note strong { color: var(--gold); }
+
     .hero-card {
       background: rgba(6,20,40,0.9); border-radius: 16px; padding: 18px 18px 20px;
       border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 40px rgba(0,0,0,0.45);
     }
     .hero-card-title { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.7); margin-bottom: 10px; }
-    .hero-metrics { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-bottom: 16px; }
-    .metric { padding: 10px 10px 8px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 12px;
+    }
+    .metric {
+      padding: 10px 10px 8px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      min-width: 0; /* allow text to wrap */
+    }
     .metric-label { font-size: 11px; color: rgba(255,255,255,0.6); margin-bottom: 4px; }
-    .metric-value { font-size: 16px; font-weight: 600; color: var(--gold); }
-    .metric-sub { font-size: 11px; color: rgba(255,255,255,0.7); overflow-wrap:anywhere; }
+    .metric-value { font-size: 14px; font-weight: 600; color: var(--gold); margin-bottom: 2px; }
+    .metric-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+      word-wrap: break-word;
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
     .hero-card-foot { font-size: 11px; color: rgba(255,255,255,0.7); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px; margin-top: 8px; }
 
     .section-title { font-size: 24px; color: var(--navy); margin-bottom: 10px; font-weight: 600; }
@@ -126,6 +142,7 @@
       .section { padding:40px 18px; }
       .hero { padding:32px 18px 50px; }
       .hero-inner { gap:22px; }
+      .hero-metrics { grid-template-columns:repeat(2,minmax(0,1fr)); }
     }
   </style>
 </head>
@@ -161,7 +178,7 @@
             </div>
             <div class="metric">
               <div class="metric-label">Email</div>
-              <div class="metric-value">Funding</div>
+              <div class="metric-value">Email</div>
               <div class="metric-sub">billy@suncoastprivatelending.com</div>
             </div>
             <div class="metric">
