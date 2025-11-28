@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SunCoast Private Lending, LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SunCoast Private Lending provides fast, asset-based private loans for real estate investors – fix & flip, rental, bridge, and construction loans. Close in days, not weeks." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #012a4a;
+      --gold: #d4af37;
+      --light-bg: #f5f7fa;
+      --text: #1f2933;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Poppins", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: var(--text); background: #ffffff; line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page { display: flex; flex-direction: column; min-height: 100vh; }
+    .section { padding: 60px 20px; }
+    .container { max-width: 1120px; margin: 0 auto; }
+
+    .hero {
+      background: radial-gradient(circle at top left, #335d8c 0%, #012a4a 55%);
+      color: #ffffff; padding-top: 40px; padding-bottom: 80px;
+    }
+    .hero-inner {
+      display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 40px; align-items: center;
+    }
+    .logo-text {
+      font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      font-size: 12px; opacity: 0.85; display: flex; align-items: center;
+      gap: 8px; margin-bottom: 18px;
+    }
+    .logo-sun {
+      width: 26px; height: 26px; border-radius: 999px;
+      border: 2px solid var(--gold); display: flex; align-items: center;
+      justify-content: center; position: relative;
+    }
+    .logo-sun::before {
+      content: ""; width: 14px; height: 7px; border-radius: 14px 14px 0 0;
+      background: var(--gold); position: absolute; bottom: 4px;
+    }
+    .logo-sun::after {
+      content: ""; position: absolute; width: 22px; height: 22px;
+      border-radius: 999px; border: 1px solid rgba(212,175,55,0.6); opacity: 0.7;
+    }
+    .hero h1 { font-size: clamp(32px,4vw,42px); line-height: 1.1; margin-bottom: 16px; font-weight: 700; }
+    .hero-sub { font-size: 15px; max-width: 520px; opacity: 0.9; margin-bottom: 22px; }
+    .hero-tags { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.85; margin-bottom: 28px; }
+    .hero-tags span { margin-right: 10px; position: relative; padding-right: 14px; }
+    .hero-tags span::after { content: "•"; position: absolute; right: 0; opacity: 0.7; }
+    .hero-tags span:last-child::after { content: ""; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .btn-primary {
+      background: var(--gold); color: #0b1720; padding: 12px 22px; border-radius: 999px;
+      font-weight: 600; font-size: 14px; border: none; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 6px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .btn-primary span.arrow { font-size: 18px; line-height: 1; transform: translateY(1px); }
+    .btn-secondary {
+      border-radius: 999px; padding: 10px 18px; font-size: 13px;
+      border: 1px solid rgba(255,255,255,0.5); background: transparent;
+      color: #e5edf6; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .hero-note { font-size: 12px; opacity: 0.85; }
+    .hero-note strong { color: var(--gold); }
+    .hero-card {
+      background: rgba(6,20,40,0.9); border-radius: 16px; padding: 18px 18px 20px;
+      border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+    }
+    .hero-card-title { font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.7); margin-bottom: 10px; }
+    .hero-metrics { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-bottom: 16px; }
+    .metric { padding: 10px 10px 8px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
+    .metric-label { font-size: 11px; color: rgba(255,255,255,0.6); margin-bottom: 4px; }
+    .metric-value { font-size: 16px; font-weight: 600; color: var(--gold); }
+    .metric-sub { font-size: 11px; color: rgba(255,255,255,0.7); }
+    .hero-card-foot { font-size: 11px; color: rgba(255,255,255,0.7); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 10px; margin-top: 8px; }
+
+    .section-title { font-size: 24px; color: var(--navy); margin-bottom: 10px; font-weight: 600; }
+    .section-sub { font-size: 14px; color: #4b5563; max-width: 640px; margin-bottom: 26px; }
+
+    .benefits { background: var(--light-bg); }
+    .benefit-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 20px; }
+    .benefit-card {
+      background:#fff; border-radius:16px; padding:18px 18px 20px;
+      border:1px solid #e0e7ff; box-shadow:0 4px 14px rgba(15,23,42,0.04);
+    }
+    .benefit-icon {
+      width:26px; height:26px; border-radius:999px;
+      background:rgba(212,175,55,0.1); border:1px solid rgba(212,175,55,0.5);
+      display:flex; align-items:center; justify-content:center; font-size:15px; margin-bottom:10px;
+    }
+    .benefit-title { font-weight:600; font-size:14px; margin-bottom:6px; color:var(--navy); }
+    .benefit-text { font-size:13px; color:#4b5563; }
+
+    .program-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+    .program-card {
+      border-radius:18px; padding:20px 20px 18px; border:1px solid #e5e7eb;
+      background:#fff; box-shadow:0 10px 30px rgba(15,23,42,0.06);
+    }
+    .program-label { font-size:11px; text-transform:uppercase; letter-spacing:0.14em; color:var(--gold); margin-bottom:4px; }
+    .program-title { font-size:17px; font-weight:600; margin-bottom:8px; color:var(--navy); }
+    .program-text { font-size:13px; color:#4b5563; margin-bottom:10px; }
+    .program-list { list-style:none; font-size:12px; color:#4b5563; margin-bottom:10px; }
+    .program-list li { margin-bottom:4px; padding-left:14px; position:relative; }
+    .program-list li::before { content:"•"; position:absolute; left:0; color:var(--gold); }
+    .program-badge {
+      display:inline-flex; align-items:center; gap:6px; font-size:11px;
+      background:rgba(212,175,55,0.08); color:#7c5b12;
+      padding:3px 10px; border-radius:999px; font-weight:500;
+    }
+
+    .process { background:var(--light-bg); }
+    .process-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .process-step { background:#fff; border-radius:16px; padding:18px 18px 16px; border:1px solid #e0e7ff; }
+    .process-number {
+      width:24px; height:24px; border-radius:999px; border:1px solid var(--gold);
+      display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--gold); margin-bottom:8px;
+    }
+    .process-title { font-size:14px; font-weight:600; margin-bottom:6px; color:var(--navy); }
+    .process-text { font-size:13px; color:#4b5563; }
+
+    .eligibility-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+    .eligibility-card { border-radius:16px; border:1px solid #e5e7eb; padding:18px 20px 18px; background:#fff; }
+    .eligibility-title { font-size:15px; font-weight:600; margin-bottom:8px; color:var(--navy); }
+    .eligibility-list { list-style:none; font-size:13px; color:#4b5563; }
+    .eligibility-list li { margin-bottom:6px; padding-left:14px; position:relative; }
+    .eligibility-list li::before { content:"•"; position:absolute; left:0; color:var(--gold); }
+
+    .apply { background:#fff; }
+    .apply-grid { display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:26px; align-items:flex-start; }
+    .apply-form {
+      border-radius:20px; border:1px solid #e5e7eb;
+      padding:22px 20px 20px; box-shadow:0 12px 30px rgba(15,23,42,0.06); background:#fff;
+    }
+    .form-row { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .field { margin-bottom:14px; }
+    .field label { display:block; font-size:12px; font-weight:500; color:#374151; margin-bottom:4px; }
+    .field input,.field select,.field textarea {
+      width:100%; border-radius:10px; border:1px solid #d1d5db;
+      padding:9px 10px; font-size:13px; font-family:inherit; outline:none;
+      transition:border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .field input:focus,.field select:focus,.field textarea:focus {
+      border-color:var(--gold); box-shadow:0 0 0 1px rgba(212,175,55,0.3);
+    }
+    .form-footer { margin-top:6px; display:flex; flex-direction:column; gap:6px; font-size:11px; color:#6b7280; }
+
+    .apply-sidebar { font-size:13px; color:#4b5563; }
+    .apply-sidebar h3 { font-size:15px; font-weight:600; color:var(--navy); margin-bottom:8px; }
+    .apply-sidebar ul { list-style:none; padding-left:0; margin-bottom:10px; }
+    .apply-sidebar li { margin-bottom:6px; padding-left:14px; position:relative; }
+    .apply-sidebar li::before { content:"•"; position:absolute; left:0; color:var(--gold); }
+
+    .faq { background:var(--light-bg); }
+    .faq-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .faq-item { background:#fff; border-radius:14px; padding:16px 18px 14px; border:1px solid #e5e7eb; }
+    .faq-q { font-size:14px; font-weight:600; margin-bottom:6px; color:var(--navy); }
+    .faq-a { font-size:13px; color:#4b5563; }
+
+    .footer {
+      background:#020b16; color:rgba(249,250,251,0.85);
+      padding:28px 20px 20px; font-size:12px;
+    }
+    .footer-inner {
+      max-width:1120px; margin:0 auto; display:flex; flex-wrap:wrap;
+      justify-content:space-between; gap:14px;
+    }
+    .footer-links { display:flex; gap:14px; flex-wrap:wrap; font-size:11px; opacity:0.8; }
+    .footer small { display:block; margin-top:6px; max-width:600px; color:rgba(209,213,219,0.8); }
+
+    @media (max-width: 900px) {
+      .hero-inner, .apply-grid { grid-template-columns:minmax(0,1fr); }
+      .hero-card { margin-top:18px; }
+      .benefit-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .program-grid,.process-grid,.eligibility-grid,.faq-grid { grid-template-columns:minmax(0,1fr); }
+    }
+    @media (max-width: 640px) {
+      .section { padding:40px 18px; }
+      .hero { padding:32px 18px 50px; }
+      .hero-inner { gap:22px; }
+      .benefit-grid { grid-template-columns:minmax(0,1fr); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <section class="hero section" id="top">
+      <div class="container hero-inner">
+        <div>
+          <div class="logo-text">
+            <div class="logo-sun"></div>
+            SUNCOAST PRIVATE LENDING
+          </div>
+          <h1>Apply for Funding</h1>
+          <p class="hero-sub">
+            Tell us about your Florida investment property and funding needs. A SunCoast loan specialist will review your details and follow up with next steps.
+          </p>
+          <div class="hero-actions">
+            <a class="btn-secondary" href="index.html">← Back to website</a>
+            <a class="btn-secondary" href="tel:14073679149">Talk with a loan specialist</a>
+          </div>
+          <p class="hero-note">
+            <strong>For investment properties only.</strong> We do not provide financing for owner-occupied primary residences.
+          </p>
+        </div>
+        <aside class="hero-card">
+          <div class="hero-card-title">Need Help?</div>
+          <div class="hero-metrics">
+            <div class="metric">
+              <div class="metric-label">Phone</div>
+              <div class="metric-value">407-367-9149</div>
+              <div class="metric-sub">Call to discuss your deal</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Email</div>
+              <div class="metric-value">Funding</div>
+              <div class="metric-sub">billy@suncoastprivatelending.com</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Coverage</div>
+              <div class="metric-value">Florida</div>
+              <div class="metric-sub">Statewide investment loans</div>
+            </div>
+          </div>
+          <div class="hero-card-foot">
+            Submit as much detail as you can. More complete information helps us respond faster with clearer options.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="apply section" id="apply">
+      <div class="container">
+        <h2 class="section-title">Deal Intake Form</h2>
+        <p class="section-sub">
+          This form will open your email app with all fields pre-filled so you can send your deal directly to <strong>billy@suncoastprivatelending.com</strong>.
+        </p>
+        <div class="apply-grid">
+          <form class="apply-form" action="mailto:billy@suncoastprivatelending.com" method="POST" enctype="text/plain">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input id="name" name="Full Name" type="text" placeholder="Your name" required />
+              </div>
+              <div class="field">
+                <label for="entity">Entity (LLC, Corp, etc.)</label>
+                <input id="entity" name="Entity" type="text" placeholder="Optional" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" placeholder="you@example.com" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="Phone" type="tel" placeholder="(###) ###-####" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="address">Property Address (if known)</label>
+              <input id="address" name="Property Address" type="text" placeholder="Street, City, State" />
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="loan-type">Loan Type</label>
+                <select id="loan-type" name="Loan Type" required>
+                  <option value="">Select one</option>
+                  <option>Fix &amp; Flip</option>
+                  <option>Rental / DSCR</option>
+                  <option>Bridge</option>
+                  <option>Construction / Heavy Rehab</option>
+                  <option>Cash-Out Refi</option>
+                  <option>Not sure / need guidance</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="loan-amount">Approximate Loan Amount Needed</label>
+                <input id="loan-amount" name="Loan Amount Needed" type="text" placeholder="$" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="timeline">Closing Timeline</label>
+                <select id="timeline" name="Closing Timeline">
+                  <option value="">Select one</option>
+                  <option>ASAP (7 days or less)</option>
+                  <option>1–2 weeks</option>
+                  <option>3–4 weeks</option>
+                  <option>Just exploring options</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="experience">Experience Level</label>
+                <select id="experience" name="Experience Level">
+                  <option value="">Select one</option>
+                  <option>First deal</option>
+                  <option>1–3 deals</option>
+                  <option>4–10 deals</option>
+                  <option>10+ deals</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="notes">Brief Deal Summary</label>
+              <textarea id="notes" name="Deal Summary" rows="4" placeholder="Purchase price, rehab budget, ARV, exit strategy, status, etc."></textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              Submit Deal via Email <span class="arrow">→</span>
+            </button>
+            <div class="form-footer">
+              <span>* This form opens your email app with the above details pre-filled. Review the message and press Send to complete submission.</span>
+              <span>Submitting this form does not constitute a formal loan application or commitment to lend.</span>
+            </div>
+          </form>
+          <aside class="apply-sidebar">
+            <h3>What to Expect After You Submit</h3>
+            <ul>
+              <li>Your email with deal details is delivered directly to SunCoast Private Lending.</li>
+              <li>A loan specialist reviews your information and may request supporting documents.</li>
+              <li>If the deal fits our programs, we follow up with questions, terms, or next steps.</li>
+            </ul>
+            <h3>Helpful Items to Have Ready</h3>
+            <ul>
+              <li>Purchase contract or price</li>
+              <li>Photos or basic description of the property</li>
+              <li>Estimated rehab or construction budget</li>
+              <li>Estimated After Repair Value (ARV)</li>
+              <li>Your exit strategy and target timeline</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <strong>SunCoast Private Lending, LLC</strong><br />
+          Phone: 407-367-9149 · Email: billy@suncoastprivatelending.com<br />
+          Website: SuncoastPrivateLending.com
+          <small>
+            SunCoast Private Lending provides financing for non-owner-occupied investment properties only. All loans are subject to underwriting approval, satisfactory collateral, and market conditions. This content is for informational purposes and does not constitute a commitment to lend or an offer of credit.
+          </small>
+        </div>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <span>·</span>
+          <span>Privacy Policy</span>
+          <span>·</span>
+          <span>Terms &amp; Disclosures</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
